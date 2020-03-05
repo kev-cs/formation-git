@@ -188,7 +188,7 @@ RevealInitializer.init(
             </li>
             <li className={nextSemiFadeClass}>
               Si vous savez utiliser Git en ligne de commande, vous savez
-              utiliser n'importe quel outils Git (bah, presque).
+              utiliser n'importe quel outil Git (bah, presque).
             </li>
             <li className={"fragment"}>
               Ça pourrait vous sauver votre vie{" "}
@@ -221,7 +221,7 @@ RevealInitializer.init(
               </p>
             </li>
             <li className={nextStepClass}>
-              Allez dans ce répertoire et faites la commande :
+              Et ensuite :
               <p style={{ textAlign: "center" }}>
                 <code style={inlineCodeStyle}>git status</code>
               </p>
@@ -411,6 +411,9 @@ RevealInitializer.init(
               <p>> afficher les branches existantes</p>
             </li>
           </ul>
+          <p className={nextStepClass}>
+            Note : votre branche courante est la branche <b>"checked out"</b>
+          </p>
         </section>
         <section>
           <h2>En cas de problème</h2>
@@ -536,8 +539,8 @@ RevealInitializer.init(
           </p>
           <p className={nextStepClass}>
             <b>Les pull requests produisent toujours des merge-commits</b> pour
-            faire de l'audit. Par contre, les merge de branches synchronisées
-            produisent des petits merge-commits, et de plus,{" "}
+            faire de l'audit. Par contre, les merges des branches synchronisées
+            produisent des petits merge-commits. De plus,{" "}
             <b>l'historique reste linéaire</b>.
           </p>
         </section>
@@ -649,10 +652,10 @@ RevealInitializer.init(
             </li>
           </ul>
           <p className={nextStepClass}>
-            Note : dans sa première apparition, il était interdit de fusionner
-            les branches tant que le développement de la fonctionnalité n'est
-            pas terminée. Aujourd'hui, le terme "feature branching" peut être
-            utilisé différemment.
+            <b>Note</b> : dans sa première apparition, il était interdit de
+            fusionner les branches tant que le développement de la
+            fonctionnalité n'est pas terminée. Aujourd'hui, le terme "feature
+            branching" peut être utilisé différemment.
           </p>
         </section>
         <section>
@@ -750,6 +753,11 @@ RevealInitializer.init(
           data-background-iframe="https://guides.github.com/introduction/flow/"
           data-background-interactive
         />
+      </section>
+      <section>
+        <p>
+          <b>Fin de la partie 1 !</b>
+        </p>
       </section>
       {/*
       <section id={commandsSlideId}>
