@@ -1,0 +1,20 @@
+:root {
+  --color: #b7442e;
+}
+
+.reveal b {
+  color: #993926;
+}
+
+.reveal h2 {
+  color: var(--color);
+}
+
+.reveal h3 {
+  color: var(--color);
+}
+
+.reveal h4 {
+  color: var(--color);
+  font-weight: bold;
+}

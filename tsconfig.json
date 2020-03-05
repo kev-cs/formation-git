@@ -1,0 +1,13 @@
+{
+  "compilerOptions": {
+    "sourceMap": true,
+    "outDir": "./dist/",
+    "noImplicitAny": true,
+    "target": "es5",
+    "jsx": "react",
+    "allowJs": true,
+    "forceConsistentCasingInFileNames": false,
+    "module": "commonjs"
+  },
+  "exclude": ["./node_modules/"]
+}
