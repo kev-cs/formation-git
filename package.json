@@ -5,7 +5,7 @@
   "private": true,
   "scripts": {
     "build": "NODE_ENV=production webpack --mode=production",
-    "dev": "webpack-dev-server --hot",
+    "start": "webpack-dev-server --hot",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -15,6 +15,7 @@
     "@babel/core": "^7.1.0",
     "@babel/preset-env": "^7.1.0",
     "@babel/preset-react": "^7.0.0",
+    "@babel/preset-typescript": "^7.8.3",
     "@types/react": "^16.9.23",
     "@types/react-dom": "^16.9.5",
     "babel-loader": "^8.0.6",
@@ -38,6 +39,7 @@
     "react": "^16.13.0",
     "react-dom": "^16.13.0",
     "react-live-clock": "^4.0.3",
+    "reveal-react-wrapper": "file:../reveal-react-wrapper",
     "reveal.js": "^3.9.2",
     "reveal.js-notes-pointer": "^0.1.4"
   }

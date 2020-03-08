@@ -4,7 +4,6 @@ const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 const PrettierPlugin = require("prettier-webpack-plugin");
-// const HtmlWebpackInlineSourcePlugin = require('html-webpack-inline-source-plugin');
 
 module.exports = {
   mode: "development",
@@ -16,18 +15,17 @@ module.exports = {
   resolve: {
     extensions: [".js", ".jsx", ".ts", ".tsx"]
   },
-  // devtool: "inline-source-map",
   module: {
     rules: [
-      {
-        test: /\.(js|jsx)$/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/react"] }
-      },
       {
         test: /\.(ts|tsx)?$/,
         use: "ts-loader",
         exclude: /node_modules/
+      },
+      {
+        test: /\.(js|jsx)$/,
+        loader: "babel-loader",
+        options: { presets: ["@babel/preset-react", "@babel/preset-env"] }
       },
       {
         test: /\.css$/,
@@ -43,13 +41,11 @@ module.exports = {
     new CleanWebpackPlugin(),
     new HtmlWebpackPlugin({
       template: "src/index.html",
-      // inlineSource: '.(js|css)$'
     }),
     new CopyPlugin([
       { from: 'node_modules/reveal.js/plugin', to: 'plugin' },
       { from: 'src/assets', to: 'assets' },
     ]),
-    // new HtmlWebpackInlineSourcePlugin(),
     new PrettierPlugin()
   ]
 };
