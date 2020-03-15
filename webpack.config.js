@@ -1,11 +1,12 @@
 const path = require("path");
 
 const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
-const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyPlugin = require('copy-webpack-plugin');
 const PrettierPlugin = require("prettier-webpack-plugin");
+const revealjsWrapperWebpack = require("react-revealjs-wrapper/src/webpack-html-template-config.js");
+const merge = require('webpack-merge');
 
-module.exports = {
+module.exports = merge(revealjsWrapperWebpack, {
   mode: "development",
   entry: "./src/index.tsx",
   output: {
@@ -18,14 +19,9 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.(ts|tsx)?$/,
-        use: "ts-loader",
+        test: /\.[jt]sx?$/,
+        use: "babel-loader",
         exclude: /node_modules/
-      },
-      {
-        test: /\.(js|jsx)$/,
-        loader: "babel-loader",
-        options: { presets: ["@babel/preset-react", "@babel/preset-env"] }
       },
       {
         test: /\.css$/,
@@ -39,13 +35,10 @@ module.exports = {
   },
   plugins: [
     new CleanWebpackPlugin(),
-    new HtmlWebpackPlugin({
-      template: "src/index.html",
-    }),
     new CopyPlugin([
-      { from: 'node_modules/reveal.js/plugin', to: 'plugin' },
-      { from: 'src/assets', to: 'assets' },
+      {from: 'node_modules/reveal.js/plugin', to: 'plugin'},
+      {from: 'src/assets', to: 'assets'},
     ]),
     new PrettierPlugin()
   ]
-};
+});
