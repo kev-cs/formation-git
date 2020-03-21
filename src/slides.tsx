@@ -47,7 +47,7 @@ const slides: FunctionComponent = () => (
           <a href={`#/${mergeAndRebaseSlideId}`}>Les merges et rebases</a>
         </li>
         <li className={nextStepClass}>
-          <a href={`#/${pullRequestsSlideId}`}>Les pull requqests</a>
+          <a href={`#/${pullRequestsSlideId}`}>Les pull request</a>
         </li>
         <li className={nextStepClass}>
           <a href={`#/${workflowsSlideId}`}>
@@ -468,7 +468,7 @@ const slides: FunctionComponent = () => (
         <ul>
           <li className={nextStepClass}>
             Les merges <b>fusionnent</b> des branches en{" "}
-            <b>créant un nouveau commit</b> contenant se qu'il faut pour la
+            <b>créant un nouveau commit</b> contenant ce qu'il faut pour la
             fusion
           </li>
           <li className={nextStepClass}>
@@ -488,12 +488,12 @@ const slides: FunctionComponent = () => (
       <section>
         <h3>Détails important</h3>
         <p className={nextStepClass}>
-          Les merges de branches qui n'ont pas la même historique produisent des{" "}
-          <b>merge-commits</b> (3-way merge)
+          Les merges des branches qui n'ont pas la même historique produisent
+          des <b>merge-commits</b>
         </p>
         <p className={nextStepClass}>
           Les merges de branches qui ont subi un rebase{" "}
-          <b>ne produisent pas de merge-commits</b> (fast-forward merge)
+          <b>ne produisent pas de merge-commits</b>
         </p>
         <p className={nextStepClass}>
           <b>Les pull requests produisent toujours des merge-commits</b> pour
@@ -649,8 +649,8 @@ const slides: FunctionComponent = () => (
           </li>
           <li>
             Inspiré du Feature Branching. Peut être mitigé en adoptant des
-            pratiques d'intégration continue ou du Trunk Development. (fréquence
-            des fusions principalement).
+            pratiques d'intégration continue ou du Trunk Based Development.
+            (faire des fusions plus souvent)
           </li>
         </ul>
       </section>

@@ -8,11 +8,11 @@ import "reveal.js/css/theme/simple.css";
 import "reveal.js/lib/css/monokai.css";
 import "./style-overrides.css";
 
-import Slides from "./slides";
+import slides from "./slides";
 
 document.title = "Formation Git - partie 1";
 
-utils.renderSlides(Slides, {
+utils.renderSlides(slides, {
   dependencies: [
     { src: "plugin/markdown/marked.js" },
     { src: "plugin/markdown/markdown.js" },
