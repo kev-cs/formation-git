@@ -9,10 +9,7 @@ const nextSemiFadeClass = "fragment fade-in-then-semi-out";
 
 const whatIsGitSlideId = "what-is-git";
 const howGitWorksSlideId = "how-git-works";
-const workflowsSlideId = "workflows";
-const pullRequestsSlideId = "pull-requests";
 const mergeAndRebaseSlideId = "merge-and-rebase";
-// const commandsSlideId = "commands";
 
 const inlineCodeStyle: CSSProperties = {
   fontWeight: "bold",
@@ -21,7 +18,7 @@ const inlineCodeStyle: CSSProperties = {
   borderRadius: "0.2rem"
 };
 
-const slides: FunctionComponent = () => (
+export default () => (
   <>
     <section>
       <img
@@ -46,17 +43,6 @@ const slides: FunctionComponent = () => (
         <li className={nextStepClass}>
           <a href={`#/${mergeAndRebaseSlideId}`}>Les merges et rebases</a>
         </li>
-        <li className={nextStepClass}>
-          <a href={`#/${pullRequestsSlideId}`}>Les pull request</a>
-        </li>
-        <li className={nextStepClass}>
-          <a href={`#/${workflowsSlideId}`}>
-            Les workflows et systèmes de branches
-          </a>
-        </li>
-        {/*          <li className={nextStepClass}>
-          <a href={`#/${commandsSlideId}`}>Quelques commandes de base</a>
-        </li>*/}
       </ol>
     </section>
     <section id={whatIsGitSlideId}>
@@ -77,38 +63,27 @@ const slides: FunctionComponent = () => (
         </p>
         <p className={nextStepClass} style={{ fontStyle: "italic" }}>
           (Allez sur{" "}
-          <a href="https://en.wikipedia.org/wiki/Git#Adoption" target="_blank">
-            wikipédia
-          </a>{" "}
-          si vous ne me croyez pas)
+          <a href="https://en.wikipedia.org/wiki/Git#Adoption">wikipédia</a> si
+          vous ne me croyez pas)
         </p>
       </section>
       <section>
         <p>
           >
-          <a
-            href="https://github.com/dictcp/awesome-git#repository-hosting"
-            target="_blank"
-          >
+          <a href="https://github.com/dictcp/awesome-git#repository-hosting">
             Des plateformes comme Github, Bitbucket, GitLab, AWS CodeCommit,
             Gogs...
           </a>
         </p>
         <p className={nextStepClass}>
           >
-          <a
-            href="https://github.com/dictcp/awesome-git#client"
-            target="_blank"
-          >
+          <a href="https://github.com/dictcp/awesome-git#client">
             Des outils comme GitKraken, TortoiseGit, SourceTree...
           </a>
         </p>
         <p className={nextStepClass}>
           >
-          <a
-            href="https://github.com/stevemao/awesome-git-addons"
-            target="_blank"
-          >
+          <a href="https://github.com/stevemao/awesome-git-addons">
             Des tonnes d'extensions !
           </a>
         </p>
@@ -117,9 +92,7 @@ const slides: FunctionComponent = () => (
           conservant la plupart de ses fonctionnalités.
         </p>
         <h3 className={nextStepClass}>
-          <a href="https://git-scm.com/ " target="_blank">
-            git-scm.com
-          </a>
+          <a href="https://git-scm.com/ ">git-scm.com</a>
         </h3>
       </section>
       <section>
@@ -131,9 +104,7 @@ const slides: FunctionComponent = () => (
           className="fragment fade-in-then-out grow"
           style={{ fontSize: "4rem" }}
         >
-          <a target="_blank" href={doItGoogleImgSearch}>
-            FAITES-LE
-          </a>
+          <a href={doItGoogleImgSearch}>FAITES-LE</a>
         </p>
       </section>
       <section>
@@ -269,10 +240,7 @@ const slides: FunctionComponent = () => (
           À vos claviers!
         </p>
         <p className={nextStepClass}>
-          <a
-            href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository"
-            target="_blank"
-          >
+          <a href="https://git-scm.com/book/en/v2/Git-Basics-Recording-Changes-to-the-Repository">
             Git Basics - Recording Changes to the Repository
           </a>
         </p>
@@ -510,267 +478,11 @@ const slides: FunctionComponent = () => (
         </p>
       </section>
     </section>
-    <section id={pullRequestsSlideId}>
-      <section>
-        <h2>Les pull requests</h2>
-        <p style={{ fontStyle: "italic" }} className={nextStepClass}>
-          (Les tirages requêtes? Requête de tirage? Tiquête de rerage?)
-        </p>
-        <p style={{ fontStyle: "italic" }} className={nextStepClass}>
-          Bref, une revue de code
-        </p>
-      </section>
-      <section>
-        <h3>Que faut-il pour faire des Pull requests</h3>
-        <ul>
-          <li className={nextStepClass}>Savoir utiliser Git</li>
-          <li className={nextStepClass}>
-            Avoir un processus de travail avec git
-          </li>
-          <li className={nextStepClass}>
-            Se mettre d'accord sur des conventions, des guidelines, et des
-            bonnes pratiques à suivre pour le code.
-          </li>
-          <li className={nextStepClass}>
-            Apprendre à utiliser l'outillage disponible (BitBucket)
-          </li>
-        </ul>
-        <p style={{ fontStyle: "italic" }} className={nextStepClass}>
-          À vos claviers!
-        </p>
-      </section>
-      <section>
-        <h3>Quelques recommandations</h3>
-        <div style={{ fontSize: "2rem" }}>
-          <p className={nextStepClass}>
-            Merger le plus souvent possible, une fois par jour, par 2 jours{" "}
-            <b>MAX</b>.
-          </p>
-          <p className={nextStepClass}>
-            <b>Les petites PR sont faciles à lire et à comprendre!</b> Faites
-            des commits qui ne brisent pas le build (en utilisant des mocks
-            temporaires ou en prenant une approche <b>bottom-top</b>).
-          </p>
-          <p className={nextStepClass}>
-            Si vous avez plusieurs commits similaires, fusionnez-les (à venir).
-          </p>
-          <p className={nextStepClass}>
-            Utilisez les commentaires et les tâches dans les PR,{" "}
-            <b>pour conserver des traces des discussions</b>.
-          </p>
-          <p className={nextStepClass}>
-            Évitez d'argumenter sur des détails techniques : si le code est
-            facile à comprendre,{" "}
-            <a href="assets/code-quality-measurement.png" target="_blank">
-              c'est un bon indicateur de qualité.
-            </a>
-          </p>
-          <p className={nextStepClass}>
-            Les messages des commits doivent êtres clairs, simples, et le plus
-            fonctionnellement parlant.
-          </p>
-        </div>
-      </section>
-    </section>
-    <section id={workflowsSlideId}>
-      <section>
-        <h2>Le workflow Git et les systèmes de branches</h2>
-        <p style={{ fontStyle: "italic" }}>
-          (Le flux de travail? Processus de travail?)
-        </p>
-      </section>
-      <section>
-        <h3>Feature branching</h3>
-        <img
-          style={{ border: "none" }}
-          src="assets/feature-branching.jfif"
-          alt="feature-branching"
-        />
-      </section>
-      <section>
-        <h3>Pros</h3>
-        <ul>
-          <li>Simple, convenable pour les petites équipes</li>
-          <li>
-            Isolation complète des modifications / fonctionnalités développées :
-            utile dans une équipe où les développeurs{" "}
-            <b>ne travaillent pas dans les mêmes fichiers.</b>
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3>Cons</h3>
-        <ul>
-          <li>Primitif, ne couvre pas beaucoup de cas d'utilisation</li>
-          <li>Cause des merge hells / conflits</li>
-          <li>
-            Les merges de grosses features peuvent provoquer un comportement
-            imprévisible de l'application
-          </li>
-        </ul>
-        <p className={nextStepClass}>
-          <b>Note</b> : dans sa première apparition, il était interdit de
-          fusionner les branches tant que le développement de la fonctionnalité
-          n'est pas terminée. Aujourd'hui, le terme "feature branching" peut
-          être utilisé différemment.
-        </p>
-      </section>
-      <section>
-        <h3>Git Flow</h3>
-        <img
-          style={{ border: "none" }}
-          src="assets/git-flow.png"
-          alt="git-flow"
-        />
-      </section>
-      <section
-        data-background-iframe="https://nvie.com/posts/a-successful-git-branching-model/"
-        data-background-interactive
-      />
-      <section>
-        <h3>Pros</h3>
-        <ul>
-          <li>
-            <b>Système complet</b> ; couvre tous les cas, avec chaque branche
-            ayant son utilité
-          </li>
-          <li>Formateur</li>
-          <li>Pratique pour les petites équipe car il aide à s'organiser</li>
-          <li>Flexible : peut être adapté selon les besoins</li>
-        </ul>
-      </section>
-      <section>
-        <h3>Cons</h3>
-        <ul>
-          <li>Plus complexe à maîtriser</li>
-          <li>
-            Plus facile à perdre le fil du travail en cours à tous les endroits
-            (surtout pour les grosses équipes)
-          </li>
-          <li>
-            Inspiré du Feature Branching. Peut être mitigé en adoptant des
-            pratiques d'intégration continue ou du Trunk Based Development.
-            (faire des fusions plus souvent)
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3>Trunk based development</h3>
-        <p style={{ fontStyle: "italic" }}>"One branch to rule them all"</p>
-        <img src="assets/tbd.png" alt="trunk-based-development" />
-      </section>
-      <section
-        data-background-iframe="https://trunkbaseddevelopment.com/"
-        data-background-interactive
-      />
-      <section>
-        <h3>Pros</h3>
-        <ul>
-          <li>Simple</li>
-          <li>Virtuellement impossible d'avoir des merge hells / conflits</li>
-          <li>Force les collaborateurs à toujours être à jour</li>
-          <li>
-            Permet de detecter les problèmes plus tôt, nous permettant d'être
-            plus réactif
-          </li>
-        </ul>
-        <p style={{ fontStyle: "italic" }}>
-          (c'est de l'intégration continue pure!)
-        </p>
-      </section>
-      <section>
-        <h3>Cons</h3>
-        <ul>
-          <li>Demande une équipe mature</li>
-          <li>
-            Selon la complexité de l'application, un outillage plus avancé est
-            requis. (surtout, des{" "}
-            <a
-              href="https://martinfowler.com/articles/feature-toggles.html"
-              target="_blank"
-            >
-              feature toggles
-            </a>
-            )
-          </li>
-          <li>
-            Très différent du Git Flow (c'est plus une note qu'un désavantage)
-          </li>
-        </ul>
-      </section>
-      <section>
-        <h3>GitHub flow</h3>
-        <img
-          style={{ border: "none" }}
-          src="assets/github-flow.png"
-          alt="github-flow"
-        />
-      </section>
-      <section
-        data-background-iframe="https://guides.github.com/introduction/flow/"
-        data-background-interactive
-      />
-    </section>
+
     <section>
       <p>
         <b>Fin de la partie 1 !</b>
       </p>
     </section>
-    {/*
-    <section id={commandsSlideId}>
-      <section>
-        <h2>Les commandes de base</h2>
-      </section>
-      <section>
-        <h2>
-          Les commandes <b>informatives</b>
-        </h2>
-        <ul>
-          <li>git status</li>
-          <li>git log</li>
-          <li>git branch</li>
-          <li>git config</li>
-          <li>git remote</li>
-          <li>git help</li>
-          <li>git diff</li>
-        </ul>
-      </section>
-      <section>
-        <h2>
-          Les commandes <b>opératoires</b>
-        </h2>
-        <ul>
-          <li>git init</li>
-          <li>git clone</li>
-          <li>git add</li>
-          <li>git commit</li>
-          <li>git merge</li>
-          <li>git rebase</li>
-          <li>git push</li>
-          <li>git pull</li>
-          <li>git stash(?)</li>
-        </ul>
-      </section>
-      <section>
-        <h2>
-          Les commandes <b>en extra</b>
-        </h2>
-        <p style={{ fontStyle: "italic" }}>(pour le moment...!)</p>
-        <ul>
-          <li>
-            git rebase <strong>-i</strong>
-          </li>
-          <li>git reset</li>
-          <li>git stash (?)</li>
-          <li>git cherry</li>
-          <li>git cherry-pick</li>
-          <li>git revert</li>
-          <li>git annotate</li>
-        </ul>
-      </section>
-    </section>
-*/}
   </>
 );
-
-export default slides;

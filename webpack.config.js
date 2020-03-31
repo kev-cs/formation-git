@@ -1,5 +1,4 @@
 const path = require("path");
-
 const CleanWebpackPlugin = require("clean-webpack-plugin").CleanWebpackPlugin;
 const CopyPlugin = require('copy-webpack-plugin');
 const PrettierPlugin = require("prettier-webpack-plugin");
@@ -18,6 +17,10 @@ module.exports = merge(revealjsWrapperWebpack, {
   },
   module: {
     rules: [
+      {
+        test: /reveal\.js$/,
+        use: [ 'script-loader' ]
+      },
       {
         test: /\.[jt]sx?$/,
         use: "babel-loader",
@@ -40,5 +43,5 @@ module.exports = merge(revealjsWrapperWebpack, {
       {from: 'src/assets', to: 'assets'},
     ]),
     new PrettierPlugin()
-  ]
+  ],
 });
