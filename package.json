@@ -39,7 +39,7 @@
     "react-dom": "^16.13.0",
     "react-live-clock": "^4.0.3",
     "react-revealjs-wrapper": "^1.0.2",
-    "reveal.js": "^3.9.2",
+    "reveal.js": "^4.3.0",
     "reveal.js-notes-pointer": "^0.1.4"
   }
 }
